@@ -85,6 +85,10 @@
   border-radius: 4px;
 }
 
+.logoWrapper img {
+  opacity: 0.3;
+}
+
 .main {
   display: flex;
   flex-direction: column;
@@ -418,4 +422,12 @@
 .custom-marker-cluster {
   border: 10px solid transparent;
   border-radius: 50%;
+}
+
+.autoScanInfoText {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 2px 5px;
+  color: white;
+  font-weight: bold;
 }
