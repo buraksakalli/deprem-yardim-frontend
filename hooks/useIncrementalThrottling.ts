@@ -17,19 +17,19 @@ export default function useIncrementalThrottling(
   useEffect(() => {
     if (remainingSec === 0) {
       cb();
-      waitingTimeSec.current *= waitingTimeSec.current;
+      waitingTimeSec.current = initialSec;
       setRemainingSec(waitingTimeSec.current);
       return;
     }
 
     const timer = setTimeout(async () => {
-      setRemainingSec(remainingSec - 1);
+      setRemainingSec((remainingSec) => remainingSec - 1);
     }, 1000);
 
     return () => {
       clearTimeout(timer);
     };
-  }, [remainingSec, cb]);
+  }, [cb, initialSec]);
 
   return [remainingSec, reset];
 }
