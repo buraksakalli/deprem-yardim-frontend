@@ -3,17 +3,59 @@
   color: crimson;
 }
 
-.logoContainer {
+.helpButtonContainer {
+  position: absolute;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  right: 10px;
+  top: 10px;
   display: flex;
-  justify-content: end;
-  margin-bottom: 10px;
+  flex-direction: column;
+  color: red;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.1;
+  width: 50px;
+  text-align: center;
+  justify-content: flex-end;
+  z-index: 1000;
 }
 
-.logoContainer img {
-  animation: pulse 2s infinite;
-  background: black;
+.logoContainer {
+  right: 0;
+  bottom: 50px;
+  display: flex;
+  position: absolute;
+  justify-content: flex-end;
+}
+
+.logoContainer img,
+.helpButtonContainer .logoWrapper {
   border-radius: 20%;
-  box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+}
+
+.helpButtonContainer .logoWrapper {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #db2121;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(242, 242, 242, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.helpButtonContainer .logoWrapper svg {
+  width: 40px;
+  height: 40px;
+}
+
+.helpButtonContainer .logoWrapper,
+.helpButtonContainer i {
+  animation: pulse 2s infinite;
+  border-radius: 20%;
   transform: scale(1);
 }
 
@@ -216,6 +258,16 @@
   }
 }
 
+.logoContainer {
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  opacity: 0.65;
+  pointer-events: none;
+}
+
 /* Mobile */
 @media (max-width: 700px) {
   .content {
@@ -292,10 +344,6 @@
     z-index: 1;
   }
 
-  .logoContainer {
-    justify-content: center;
-  }
-
   .logoWrapper {
     display: flex;
     flex-direction: column-reverse;
@@ -311,7 +359,8 @@
   }
 
   .logoContainer p {
-    font-size: 14px;
+    font-size: 0.875rem;
+    display: none;
   }
 }
 
@@ -364,4 +413,9 @@
     transform: scale(0.95);
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   }
+}
+
+.custom-marker-cluster {
+  border: 10px solid transparent;
+  border-radius: 50%;
 }

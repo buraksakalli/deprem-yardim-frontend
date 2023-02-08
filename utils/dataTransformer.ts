@@ -1,6 +1,7 @@
-import { LocationsResponse, MarkerData } from "@/mocks/types";
+import { MarkerData } from "@/mocks/types";
+import { Data } from "@/mocks/TypesAreasEndpoint";
 
-export default function dataTransformer(data: LocationsResponse): MarkerData[] {
+export default function dataTransformer(data: Data): MarkerData[] {
   return data.results.map((result) => {
     const id = result.id;
     const formatted_address = result?.formatted_address;
